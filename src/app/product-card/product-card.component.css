@@ -3,7 +3,6 @@
   border: solid 1px #999;
   padding: 10px;
   border-radius: 8px;
-  width: 300px;
   flex-direction: column;
   gap: 10px;
 }
@@ -22,13 +21,8 @@ div.button button {
   cursor: pointer;
 }
 
-button.edit {
+button.shop {
   background-color: #007bff;
-  color: white;
-}
-
-button.remove {
-  background-color: #ba1a1a;
   color: white;
 }
 

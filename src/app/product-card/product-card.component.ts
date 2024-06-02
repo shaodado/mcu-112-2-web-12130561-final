@@ -1,4 +1,4 @@
-import { Component, Input, booleanAttribute, numberAttribute } from '@angular/core';
+import { Component, HostBinding, Input, booleanAttribute } from '@angular/core';
 
 @Component({
   selector: 'app-product-card',
@@ -8,12 +8,16 @@ import { Component, Input, booleanAttribute, numberAttribute } from '@angular/co
   styleUrl: './product-card.component.css',
 })
 export class ProductCardComponent {
-  @Input({ required: true, transform: numberAttribute }) id!: number;
-  @Input() productname!: String;
-  @Input() authors!: String;
+  @Input()
+  productname!: String;
+  @Input() authors!: String[];
   @Input() company!: String;
   @Input({ transform: booleanAttribute }) isShow!: boolean;
   @Input() imgUrl!: String;
+
+  @HostBinding('class')
+  class = 'product-card';
+
   onSetDisplay(isShow: boolean): void {
     this.isShow = isShow;
   }
