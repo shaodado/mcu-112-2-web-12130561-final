@@ -1,0 +1,14 @@
+<div class="container">
+  @for (product of products; track product.id) {
+  <app-product-card
+    [id]="product.id"
+    [productname]="product.name"
+    [authors]="product.authors"
+    [company]="product.company"
+    [isShow]="product.isShow"
+    [imgUrl]="product.imgUrl"
+  ></app-product-card>
+  }@empty {
+  <div class="data-empty">無產品資料</div>
+  }
+</div>
