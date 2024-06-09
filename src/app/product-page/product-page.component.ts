@@ -22,7 +22,7 @@ export class ProductPageComponent implements OnInit {
     this.products = this.productService.getList();
   }
 
-  onAdd(): void {
+  /*onAdd(): void {
     const product = new Product({
       id: 1,
       name: '產品 Z',
@@ -35,7 +35,7 @@ export class ProductPageComponent implements OnInit {
     });
 
     this.productService.add(product);
-  }
+  }*/
 
   onShop(product: Product): void {
     alert('已加入購物車');

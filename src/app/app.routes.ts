@@ -9,5 +9,5 @@ export const routes: Routes = [
   { path: 'products', component: ProductPageComponent },
   { path: 'product/view/:id', component: ProductDetailPageComponent },
   { path: 'product/form/:id', component: ProductFormPageComponent },
-  { path: 'Login', component: LoginPageComponent },
+  { path: 'login', component: LoginPageComponent },
 ];
