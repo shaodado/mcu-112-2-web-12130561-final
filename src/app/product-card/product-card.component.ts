@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, booleanAttribute } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, Output, booleanAttribute, numberAttribute } from '@angular/core';
 
 @Component({
   selector: 'app-product-card',
@@ -8,17 +8,16 @@ import { Component, HostBinding, Input, booleanAttribute } from '@angular/core';
   styleUrl: './product-card.component.css',
 })
 export class ProductCardComponent {
-  @Input()
-  productname!: String;
+  @Input() productname!: String;
   @Input() authors!: String[];
   @Input() company!: String;
-  @Input({ transform: booleanAttribute }) isShow!: boolean;
   @Input() imgUrl!: String;
+  @Input({ transform: booleanAttribute }) isShow!: boolean;
+  @Input() createdDate!: Date;
+  @Input({ transform: numberAttribute }) price!: number;
 
   @HostBinding('class')
   class = 'product-card';
 
-  onSetDisplay(isShow: boolean): void {
-    this.isShow = isShow;
-  }
+  @Output() view = new EventEmitter<void>();
 }
