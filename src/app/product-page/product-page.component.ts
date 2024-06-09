@@ -1,7 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from '../model/product';
 import { ProductCardListComponent } from '../product-card-list/product-card-list.component';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-product-page',
@@ -10,51 +11,17 @@ import { ProductCardListComponent } from '../product-card-list/product-card-list
   templateUrl: './product-page.component.html',
   styleUrl: './product-page.component.css',
 })
-export class ProductPageComponent {
-  products = [
-    new Product({
-      id: 1,
-      name: '產品 A',
-      authors: ['作者A', '作者B', '作者C'],
-      company: '博碩文化',
-      isShow: true,
-      createDate: new Date(),
-      imgUrl: 'https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img',
-      price: 10000,
-    }),
-    new Product({
-      id: 2,
-      name: '產品 B',
-      authors: ['作者A', '作者B', '作者C'],
-      company: '博碩文化',
-      isShow: true,
-      createDate: new Date(),
-      imgUrl: 'https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img',
-      price: 10000,
-    }),
-    new Product({
-      id: 3,
-      name: '產品 C',
-      authors: ['作者A', '作者B', '作者C'],
-      company: '博碩文化',
-      isShow: true,
-      createDate: new Date(),
-      imgUrl: 'https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img',
-      price: 10000,
-    }),
-    new Product({
-      id: 4,
-      name: '產品 D',
-      authors: ['作者A', '作者B', '作者C'],
-      company: '博碩文化',
-      isShow: true,
-      createDate: new Date(),
-      imgUrl: 'https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img',
-      price: 10000,
-    }),
-  ];
-
+export class ProductPageComponent implements OnInit {
   router = inject(Router);
+
+  productService!: ProductService;
+
+  products!: Product[];
+
+  ngOnInit(): void {
+    this.productService = new ProductService();
+    this.products = this.productService.getList();
+  }
 
   onShop(product: Product): void {
     alert('已加入購物車');
