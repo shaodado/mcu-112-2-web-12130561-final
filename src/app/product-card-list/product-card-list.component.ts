@@ -13,5 +13,6 @@ export class ProductCardListComponent {
   @Input({ required: true })
   products!: Product[];
 
+  @Output() shop = new EventEmitter<Product>();
   @Output() view = new EventEmitter<Product>();
 }
