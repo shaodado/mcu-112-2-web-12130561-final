@@ -53,8 +53,10 @@ export class ProductService {
     return of(this._data);
   }
 
-  add(product: Product): void {
+  add(product: Product): Observable<Product> {
     const id = this._data.length === 0 ? 1 : Math.max(...this._data.map(({ id }) => id)) + 1;
-    this._data.push(new Product({ ...product, id }));
+    const newProduct = new Product({ ...product, id });
+    this._data.push(new Product());
+    return of(newProduct);
   }
 }
