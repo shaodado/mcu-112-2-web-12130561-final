@@ -13,7 +13,6 @@ export class ProductCardComponent {
   @Input() company!: String;
   @Input() imgUrl!: String;
   @Input({ transform: booleanAttribute }) isShow!: boolean;
-  @Input() createdDate!: Date;
   @Input({ transform: numberAttribute }) price!: number;
 
   @HostBinding('class')

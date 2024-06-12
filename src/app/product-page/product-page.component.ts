@@ -41,6 +41,7 @@ export class ProductPageComponent {
   }*/
 
   onShop(product: Product): void {
+    this.router.navigate(['shop']);
     alert('已加入購物車');
   }
 
