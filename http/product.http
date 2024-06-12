@@ -1,0 +1,6 @@
+# Get List
+GET http://[::]:3000/products HTTP/1.1
+
+###
+#Get By Id
+GET http://[::]:3000/products/1 HTTP/1.1
