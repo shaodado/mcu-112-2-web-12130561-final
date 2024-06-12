@@ -21,7 +21,7 @@ Content-Type: application/json
    "price": 10000
   }
 
-  ###
+###
 
 # Update
 PUT http://[::]:3000/products/2 HTTP/1.1

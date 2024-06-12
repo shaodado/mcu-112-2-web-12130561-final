@@ -49,8 +49,8 @@ export class ProductService {
     }),
   ];
 
-  getById(productId: number): Product {
-    return this._data.find(({ id }) => id === productId)!;
+  getById(productId: number): Observable<Product> {
+    return of(this._data.find(({ id }) => id === productId)!);
   }
 
   getList(): Observable<Product[]> {
