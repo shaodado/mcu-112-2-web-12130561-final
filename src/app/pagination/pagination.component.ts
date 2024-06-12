@@ -15,7 +15,7 @@ export class PaginationComponent {
   pageSize!: number;
 
   @Input({ transform: numberAttribute })
-  pageIdex = 1;
+  pageIndex = 1;
 
   range: number[] = [];
 
