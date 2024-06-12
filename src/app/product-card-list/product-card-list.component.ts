@@ -13,6 +13,7 @@ import { ProductCardComponent } from '../product-card/product-card.component';
 export class ProductCardListComponent {
   @Input({ required: true })
   products!: Product[];
+  pageIndex = 1;
 
   @Output() shop = new EventEmitter<Product>();
   @Output() view = new EventEmitter<Product>();

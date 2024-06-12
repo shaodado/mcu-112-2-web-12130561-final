@@ -1,4 +1,4 @@
-import { Component, Input, numberAttribute } from '@angular/core';
+import { Component, EventEmitter, Input, Output, numberAttribute } from '@angular/core';
 
 @Component({
   selector: 'app-pagination',
@@ -16,6 +16,9 @@ export class PaginationComponent {
 
   @Input({ transform: numberAttribute })
   pageIndex = 1;
+
+  @Output()
+  pageIndexChange = new EventEmitter<number>();
 
   range: number[] = [];
 
