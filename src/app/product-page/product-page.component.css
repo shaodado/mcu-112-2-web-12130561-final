@@ -6,6 +6,7 @@
 .toolbar {
   display: flex;
   margin-bottom: 20px;
+  justify-content: space-between;
 }
 
 input[type='text'] {
@@ -15,6 +16,7 @@ input[type='text'] {
   font-size: 20px;
   border: solid 1px #007bff;
   border-radius: 10px;
+  margin-right: 10px;
 }
 
 button {
