@@ -47,9 +47,8 @@ export class ProductPageComponent {
     this.pageIndex$.pipe(tap((index) => console.log(index))),
   ]).pipe(switchMap(([_, condition, pageIndex]) => this.productService.getList(condition, pageIndex, this.pageSize)));
 
-  readonly totalCount$ = this.refresh$.pipe(
-    startWith(undefined),
-    switchMap(() => this.productService.getCount())
+  readonly totalCount$ = combineLatest([this.refresh$.pipe(startWith(undefined)), this.condition$]).pipe(
+    switchMap(([_, condition]) => this.productService.getCount(condition))
   );
 
   onPageIndexChange(index: number): void {
