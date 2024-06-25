@@ -13,6 +13,7 @@ import { ProductCardComponent } from '../product-card/product-card.component';
 export class ProductCardListComponent {
   @Input({ required: true })
   products!: Product[];
+
   @Input({ required: true, transform: numberAttribute })
   totalCount!: number;
 
@@ -25,5 +26,6 @@ export class ProductCardListComponent {
   pageIndexChange = new EventEmitter<number>();
 
   @Output() shop = new EventEmitter<Product>();
+
   @Output() view = new EventEmitter<Product>();
 }
